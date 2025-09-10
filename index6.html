@@ -454,26 +454,54 @@
           <select id="languages"></select>                   
       </div>
 
-              <!-- Lower Section -->
-              <div class="lower-container">
-                  <div class="metadata-group">
-                      <label>Save to Playlist</label>
-                      <select id="Playlist">
-                          <option>Create New Playlist</option>
-                          <option>Teen X</option>
-                          <option>Afrilens</option>
-                          <option>Nettoon</option>
-                          <option>Kenya</option>
-                      </select>
-                  </div>
-
-      <div class="meta">
-          <p>Allow comments</p>
-          <input type="radio" name="comments" id="commentsYes" value="Yes">
-          <label for="commentsYes">Yes</label>
-          <input type="radio" name="comments" id="commentsNo" value="No">
-          <label for="commentsNo">No</label>
+           <!-- Lower Section -->
+<div class="lower-container">
+  <div class="metadata-group">
+    <label>Save to Playlist</label>
+    <div class="playlist-options">
+      <div class="option">
+        <input type="checkbox" id="playlistNew" name="playlist" value="new">
+        <label for="playlistNew">Create New Playlist</label>
       </div>
+
+      <div class="option">
+        <input type="checkbox" id="playlistTeen" name="playlist" value="teen">
+        <label for="playlistTeen">Teen X</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="playlistAfrilens" name="playlist" value="afrilens">
+        <label for="playlistAfrilens">Afrilens</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="playlistNettoon" name="playlist" value="nettoon">
+        <label for="playlistNettoon">Nettoon</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="playlistKenya" name="playlist" value="kenya">
+        <label for="playlistKenya">Kenya</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                  <div class="meta">
+                    <p>Allow comments</p>
+                  
+                    <div class="option">
+                      <input type="radio" name="comments" id="commentsYes" value="Yes">
+                      <label for="commentsYes">Yes</label>
+                    </div>
+                  
+                    <div class="option">
+                      <input type="radio" name="comments" id="commentsNo" value="No">
+                      <label for="commentsNo">No</label>
+                    </div>
+                  </div>
+                  
 
   </div>
 
@@ -853,15 +881,19 @@
                           <option>Kenya</option>
                       </select>
                   </div>
-
-      <div class="meta">
-          <p>Allow comments</p>
-          <input type="radio" name="comments" id="commentsYes" value="Yes">
-          <label for="commentsYes">Yes</label>
-          <input type="radio" name="comments" id="commentsNo" value="No">
-          <label for="commentsNo">No</label>
-      </div>
-
+                  <div class="meta">
+                    <p>Allow comments</p>
+                  
+                    <div class="option">
+                      <input type="radio" name="comments" id="commentsYes" value="Yes">
+                      <label for="commentsYes">Yes</label>
+                    </div>
+                  
+                    <div class="option">
+                      <input type="radio" name="comments" id="commentsNo" value="No">
+                      <label for="commentsNo">No</label>
+                    </div>
+                  </div>
   </div>
 
 
