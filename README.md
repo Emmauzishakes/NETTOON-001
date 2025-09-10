@@ -1,6 +1,6 @@
 # NETTOON
 
-🎬 NETTOON: Your Online Domain for Free Cartoons and Animations Only
+# Your Online Domain for Free Cartoons and Animations Only
 
 Welcome to Nettoon — the world’s first free video streaming platform built exclusively for cartoons and animations.
 
