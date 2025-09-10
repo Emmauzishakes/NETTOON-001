@@ -16,7 +16,8 @@ These are the first official lines of code for the Nettoon platform — a dedica
 
 their favorite cartoon and animation content from anywhere in the world.
 
-🎯 Our Vision We aim to be the first-ever video streaming platform focused entirely on cartoons and animations. For far too long, animated content enthusiasts have lacked a dedicated platform to call home.
+#🎯 Our Vision
+ We aim to be the first-ever video streaming platform focused entirely on cartoons and animations. For far too long, animated content enthusiasts have lacked a dedicated platform to call home.
 
 Nettoon changes that — by creating a digital world solely for animation lovers.
 
