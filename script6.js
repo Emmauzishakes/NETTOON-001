@@ -412,39 +412,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Toggle dropdown
+const dropdown = document.querySelector('.playlist-dropdown');
+const toggleBtn = dropdown.querySelector('.dropdown-toggle');
 
-document.getElementById("createPlaylistBtn").addEventListener("click", function () {
-    let playlistName = document.getElementById("newPlaylistName").value.trim();
-    
-    if (playlistName === "") {
-        alert("Please enter a playlist name.");
-        return;
-    }
-
-    let playlistsContainer = document.getElementById("playlists-container");
-
-    // Create new playlist item
-    let newPlaylist = document.createElement("div");
-    newPlaylist.classList.add("playlist-item");
-
-    let newCheckbox = document.createElement("input");
-    newCheckbox.type = "checkbox";
-    newCheckbox.classList.add("playlist-checkbox");
-    newCheckbox.id = playlistName.toLowerCase().replace(/\s+/g, "-");
-
-    let newLabel = document.createElement("label");
-    newLabel.setAttribute("for", newCheckbox.id);
-    newLabel.textContent = playlistName;
-
-    // Append new elements
-    newPlaylist.appendChild(newCheckbox);
-    newPlaylist.appendChild(newLabel);
-    playlistsContainer.appendChild(newPlaylist);
-
-    // Clear input field
-    document.getElementById("newPlaylistName").value = "";
+toggleBtn.addEventListener('click', () => {
+  dropdown.classList.toggle('active');
 });
 
+// Optional: close if clicked outside
+document.addEventListener('click', (e) => {
+  if (!dropdown.contains(e.target)) {
+    dropdown.classList.remove('active');
+  }
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {

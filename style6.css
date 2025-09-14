@@ -816,7 +816,7 @@ opacity: 1;
 /* 🌟 Overlay */
 .upload-overlay {
   position: fixed;
-  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  inset: 0; /* covers full viewport */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -827,10 +827,9 @@ opacity: 1;
 
 /* 🌟 Upload Container */
 .upload-container {
-  width: 90vw; /* responsive width */
-  max-width: 60rem; /* ~960px */
+  width: 90vw;
+  max-width: 60rem; /* 960px */
   max-height: 90vh;
-  min-height: 46.875rem; /* 750px → rem */
   position: relative;
 
   display: flex;
@@ -838,20 +837,21 @@ opacity: 1;
   background-color: #fff;
   padding: 2rem;
   border-radius: 0.8rem;
-
   box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
-
 
   /* Animation */
   opacity: 0;
   transform: translateY(-3.125rem);
   animation: popIn 0.5s ease-out forwards;
 
-  text-align: left;
-
-  /* ✅ Scroll handling */
-  overflow-y: auto;   
+  overflow-y: auto;
   overflow-x: hidden;
+}
+
+/* 🎯 Center titles only */
+.upload-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* 🌙 Dark Mode */
@@ -1494,7 +1494,7 @@ h3 {
   position: relative;
   width: 100%;
   padding: 1rem; /* Consistent spacing */
-  background: #fff5f0; /* Softer salmon tone for better readability */
+  background: transparent; /* Softer salmon tone for better readability */
   border: 1px solid #ddd; /* Subtler border */
   border-radius: 0.75rem; /* Smoother rounded corners */
   margin-bottom: 1rem; /* More consistent spacing */
@@ -1571,6 +1571,9 @@ h3 {
   font-weight: 600;
   color: #fff;
   transition: background 0.25s ease, transform 0.15s ease;
+
+  /* New spacing */
+  margin-left: 2%;
 }
 
 /* ➕ Add Button */
@@ -1728,55 +1731,53 @@ select:focus {
   outline: none;
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.45);
 }
-
-/* 📌 Playlist Options Container */
-.playlist-options {
-  display: flex;
-  flex-wrap: wrap;   /* Wrap neatly on small screens */
-  gap: 1rem 2rem;    /* Vertical + horizontal spacing */
-  justify-content: center; 
-  margin-top: 0.5rem;
-}
-
-/* Each checkbox + label pair */
-.playlist-options .option {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Checkbox styling */
-.playlist-options input[type="checkbox"] {
-  transform: scale(1.2); /* Slightly bigger for accessibility */
-  cursor: pointer;
-  accent-color: #007bff; /* Modern browsers support checkbox color */
-}
-
-/* Label styling */
-.playlist-options label {
+/* Playlist Dropdown Multiple Select */
+#Playlist {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
   font-size: 1rem;
+  background-color: #fff;
+  color: #222;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  
+  /* Force vertical look */
+  height: auto;
+  min-height: 10rem;   /* enough room for options */
+}
+
+/* Each option styling */
+#Playlist option {
+  padding: 0.5rem;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
-.playlist-options label:hover {
-  color: #007bff;
+/* Hover + Focus styling */
+#Playlist option:hover {
+  background-color: #007bff;
+  color: #fff;
 }
 
+#Playlist:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.45);
+}
 
-/* 🌙 Dark Mode Support */
-.dark-mode select,
-.dark-mode input {
+/* 🌙 Dark Mode */
+.dark-mode #Playlist {
   background-color: #1e1e1e;
   color: #f1f1f1;
   border: 1px solid #444;
 }
-
-.dark-mode select:focus,
-.dark-mode input:focus {
-  border-color: #4da3ff;
-  box-shadow: 0 0 6px rgba(77, 163, 255, 0.5);
+.dark-mode #Playlist option:hover {
+  background-color: #4da3ff;
+  color: #fff;
 }
+
 /* 📌 Main Metadata Container */
 .metadata-container {
   display: flex;
@@ -2230,6 +2231,9 @@ select:focus {
   gap: 0.35rem; /* Small space between radio and label */
 }
 
+.meta label {
+margin-top: 1rem;
+}
 
 .meta label:hover {
   color: #007bff;
@@ -2326,60 +2330,8 @@ button:focus {
     font-size: 1.05rem;
   }
 }
-/* 🎨 General Button Styling */
-button {
-  width: 50%;
-  min-width: 7.5rem;   /* 120px → more semantic */
-  max-width: 18.75rem; /* 300px → responsive upper bound */
-  height: 2.8rem;
-  background-color: #45a049;
-  color: #fff;
-  margin: 0.5rem 1vw 3vw;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  text-align: center;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  user-select: none; /* Prevents accidental text selection */
-}
 
-/* 🎭 First Button in a Container */
-button:first-child {
-  background: green;
-  color: #000;
-}
 
-/* 🚀 Hover & Active Effects */
-button:hover {
-  background-color: #2e7d32; /* Darker green for contrast */
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.97); /* Subtle press effect */
-}
-
-/* 🔵 Focus Accessibility */
-button:focus-visible {
-  outline: 2px solid #007bff;
-  outline-offset: 3px;
-}
-
-/* 📱 Mobile & Small Screens */
-@media (max-width: 768px) {
-  button {
-    width: 80%;
-    font-size: 1rem;
-    height: 2.5rem;
-  }
-}
 /* 🎨 Reset & Base Button Styling */
 button {
   all: unset; /* Removes browser defaults */
@@ -2397,21 +2349,6 @@ button {
   white-space: nowrap;
   transition: background-color 0.3s ease, transform 0.2s ease;
   user-select: none;
-}
-
-/* 🚀 Interactions */
-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-  transform: translateY(-2px);
-}
-
-button:active {
-  transform: scale(0.97);
-}
-
-button:focus-visible {
-  outline: 2px solid #80bdff;
-  outline-offset: 3px;
 }
 
 /* ✅ Centering Titles Globally */
@@ -2438,6 +2375,48 @@ label {
   }
 }
 
+/* 🎭 First Button in a Container */
+button:first-child {
+  background: green;
+  color: #000;
+}
+
+/* 🚀 Hover & Active Effects */
+button:hover {
+  background-color: #2e7d32; /* Darker green for contrast */
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.97); /* Subtle press effect */
+}
+
+/* 🔵 Focus Accessibility */
+button:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 3px;
+}
+
+.upload-btn-wrapper {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  margin-top: 1.5rem;
+}
+
+.upload-btn-wrapper button {
+  width: 50%;
+  max-width: 18.75rem;
+}
+
+
+/* 📱 Mobile & Small Screens */
+@media (max-width: 768px) {
+  button {
+    width: 80%;
+    font-size: 1rem;
+    height: 2.5rem;
+  }
+}
 
 /* Light Mode Styles */
 .light-mode {
@@ -2841,7 +2820,7 @@ min-height: 500px;
   
   .Table
   {
-    background-color: transparent;
+    background-color: red;
   }
   
   .overlay-text
