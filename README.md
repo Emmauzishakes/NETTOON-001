@@ -62,3 +62,5 @@ Please read the CONTRIBUTING.md before submitting a PR.
 📱 Socials: #Nettoon #CartoonWorld #AnimationForAll
 
 "A platform for the animated dreamers. This is your world. Welcome to Nettoon."
+
+Your online domain for free cartoons and animations.
